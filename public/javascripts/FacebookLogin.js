@@ -92,11 +92,11 @@
      console.log('Welcome!  Fetching your information.... ');
      FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
-     });
+        });
      
        FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
+         statusChangeCallback(response);
+        });
     } else {
      console.log('User cancelled login or did not fully authorize.');
     }
