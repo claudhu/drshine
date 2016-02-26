@@ -105,7 +105,9 @@
     },{scope:'public_profile,user_friends,email'});}
 
 function RunIt(){
-    var height = $('inputHeight').val();
-    var weight = $('inputWeight').val();
-    console.log(weight/Math.pow(height/100,2));
+    var height = $('#inputHeight').val();
+    var weight = $('#inputWeight').val();
+    
+    
+        console.log( weight/Math.pow(height/100,2) );
 }
