@@ -9,6 +9,7 @@
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       document.getElementById('FB_LoginButton').style.display='none';
+      document.getElementById('MainQuestion').style.display='block';
       testAPI();
     } else if (response.status === 'not_authorized') {
         show_FB_LoginButton();
@@ -77,13 +78,14 @@
       console.log('登入資料'+response.id);
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+        '歡迎回來, ' + response.name + '!';
     });
   }
   //顯示FB的登入圖示
   function show_FB_LoginButton(){
       var FB_icon=document.getElementById('FB_LoginButton');
       FB_icon.style.display='inline-block';  
+
   }
   
   function loginFB(){
@@ -102,3 +104,8 @@
     }
     },{scope:'public_profile,user_friends,email'});}
 
+function RunIt(){
+    var height = $('inputHeight').val();
+    var weight = $('inputWeight').val();
+    console.log(weight/Math.pow(height/100,2));
+}

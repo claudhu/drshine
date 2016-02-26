@@ -7,8 +7,17 @@ block content
                 h1 光澤診所||台北忠孝 
                 h2 「專屬於您的BMI計算機」
                 p(id='status')
-                
-                
+                #MainQuestion(style="display:none")
+                    div(style="display:block")
+                        label(for="inputHeight") 身高：
+                        input( id="inputHeight",placeholder="身高")
+                    div(style="display:block")
+                        label(for="inputWeight") 體重：
+                        input(id="inputWeight",placeholder="體重")
+                    
+                    
+                    button(type="button" class="btn btn-primary") 確定
+                    
                 div.facebook_login_place
                     
                     
