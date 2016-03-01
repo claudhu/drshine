@@ -1,4 +1,4 @@
-//var passport = require('passport'); 
+//var passport = require('passport');  Passport認證功能:
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
