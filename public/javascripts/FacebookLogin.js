@@ -37,13 +37,13 @@
   window.fbAsyncInit = function() {
   FB.init({
     appId      : '131665767185178',
-    cookie     : true,  // enable cookies to allow the server to access 
+    cookie     : true,  // enable cookies to allow the server to access
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.5' // use graph api version 2.5
   });
 
-  // Now that we've initialized the JavaScript SDK, we call 
+  // Now that we've initialized the JavaScript SDK, we call
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
   // the callback you provide.  They can be:
@@ -84,18 +84,22 @@
   //顯示FB的登入圖示
   function show_FB_LoginButton(){
       var FB_icon=document.getElementById('FB_LoginButton');
-      FB_icon.style.display='inline-block';  
+      FB_icon.style.display='inline-block';
 
   }
-  
+
   function loginFB(){
-      FB.login(function(response) {
+     	var appID='131665767185178';
+	  if( navigator.userAgent.match('CriOS') )
+	         window.open('https://www.facebook.com/dialog/oauth?client_id='+appID+'&redirect_uri='+ document.location.href +'&scope=email,public_profile', '', null);else
+
+	 FB.login(function(response) {
     if (response.authResponse) {
      console.log('Welcome!  Fetching your information.... ');
      FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
         });
-     
+
        FB.getLoginStatus(function(response) {
          statusChangeCallback(response);
         });
@@ -107,7 +111,9 @@
 function RunIt(){
     var height = $('#inputHeight').val();
     var weight = $('#inputWeight').val();
-    
-    
+
+
         console.log( weight/Math.pow(height/100,2) );
+
+        alert( weight/Math.pow(height/100,2) );
 }

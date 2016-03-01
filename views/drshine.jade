@@ -9,14 +9,13 @@ block content
                 p(id='status')
                 #MainQuestion(style="display:none")
                     div(style="display:block")
-                        label(for="inputHeight") 身高：
-                        input( id="inputHeight",placeholder="身高")
+                        label(for="inputHeight") 身高（公分）：
+                        input( id="inputHeight",placeholder="身高",style="color:black",type="number")
                     div(style="display:block")
-                        label(for="inputWeight") 體重：
-                        input(id="inputWeight",placeholder="體重")
-                    
-                    
-                    button(type="button" class="btn btn-primary" onclick="RunIt()") 確定
+                        label(for="inputWeight") 體重（公斤）：
+                        input(id="inputWeight",placeholder="體重",style="color:black",type="number")
+                        H1 測試版啦 還有很多部分需要慢慢修改                    
+                    button(type="button" class="btn btn-primary" onclick="RunIt()" ) 確定
                     
                 div.facebook_login_place
                     
